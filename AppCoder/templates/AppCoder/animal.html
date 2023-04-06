@@ -1,0 +1,25 @@
+{% extends "AppCoder/inicio.html"%}
+
+{% load static %}
+
+{% block herencia %}
+    
+    <h1>Listado de mascotas:</h1>
+
+           <ul>
+        {% for m in mascotas %}
+            <li>{{m}}</li>
+            <button>
+                <a href="{% url 'eliminarMascota' m.nombreAnimal %}">Borrar | </a>
+                <a href="{% url 'editarMascota' m.nombreAnimal %}">Actualizar</a>
+            </button>
+            <br>
+        {% endfor %}
+        </ul>
+        <p>
+            <a href="formularioMascota">Agregar</a>
+            
+        </p>
+    
+   
+{% endblock %}
